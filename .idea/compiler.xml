@@ -9,8 +9,5 @@
         <module name="Snowalowe" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Snowalowe" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>

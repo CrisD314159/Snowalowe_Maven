@@ -1,18 +1,35 @@
 package co.edu.uniquindio.snowalowe.snowalowe.model;
 
+import java.util.ArrayList;
+
 public class Red {
+    private ArrayList<Vendedor> usuarios;
 
-    private String nombre;
+    /*----------------CONSTRUCTOR--------------------------------------------------*/
 
-    public Red(String nombre) {
-        this.nombre = nombre;
+    public Red(ArrayList<Vendedor> usuarios) {
+        this.usuarios = new ArrayList<>();
     }
 
-    public String getNombre() {
-        return nombre;
+    /*----------------METODOS-------------------------------------------------------*/
+    public void buscarVendedor(String id ){
+
+    }
+    public void buscarVendedorNom(String nombre ){
+
+    }
+    public void sugerirVendedor(String id ){
+
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+    /*----------------GETTERS & SETTERS-----------------------------------------------*/
+
+    public ArrayList<Vendedor> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(ArrayList<Vendedor> usuarios) {
+        this.usuarios = usuarios;
     }
 }

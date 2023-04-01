@@ -2,7 +2,7 @@ package co.edu.uniquindio.snowalowe.snowalowe.controllers;
 
 public class Snowalowe {
 
-    private static Snowalowe snowalowe; //creamos una instancia esta de momento es = null
+    private static Snowalowe snowalowe; //creamos una instancia, esta de momento es = null
 
     private Snowalowe(){  }    //creamos el constructor de la clase privado para que no se puede acceder a el
 /*-----------------------------------------------------------------------------------------*/

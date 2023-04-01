@@ -25,4 +25,6 @@ public class MainSnowAlowe extends Application {
         System.out.println(snowalowe1.hashCode());
         System.out.println(snowalowe2.hashCode());
     }
+
+
 }
