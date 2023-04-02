@@ -1,15 +1,21 @@
 package co.edu.uniquindio.snowalowe.controllers;
 
+import co.edu.uniquindio.snowalowe.MainSnowAlowe;
+import co.edu.uniquindio.snowalowe.exceptions.VendedorException;
+import co.edu.uniquindio.snowalowe.model.Vendedor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 
-public class LoginController {
-    @FXML
-    public AnchorPane PanelPrincipal;
+import java.io.IOException;
+import java.util.Objects;
+
+public class LoginController implements Alerta {
+
+    MainSnowAlowe main;
     @FXML
     private Label SesionLabel;
 
@@ -23,10 +29,10 @@ public class LoginController {
     private Label noAccountLabel;
 
     @FXML
-    private Label passwordField;
+    private Label passwordLabel;
 
     @FXML
-    private TextField passwordLabel;
+    private PasswordField passwordField;
 
     @FXML
     private Button resetpasswordButton;
@@ -38,18 +44,56 @@ public class LoginController {
     private Label userLabel;
 
     @FXML
-    void crearCuentaEvent(ActionEvent event) {
+    void crearCuentaEvent(ActionEvent event) throws IOException {
+        crearCuentaAction();
 
     }
 
-    @FXML
-    void loginEvent(ActionEvent event) {
+    private void crearCuentaAction() throws IOException {
+        main.abrirCrearCuenta();
+    }
 
+    @FXML
+    void loginEvent(ActionEvent event) throws VendedorException, IOException {
+        loginAction();
+
+    }
+
+    private void loginAction() throws VendedorException, IOException {
+        String usuario = "";
+        String contrasenia = "";
+        usuario = userField.getText();
+        contrasenia= passwordField.getText();
+        if(verificarCampos(usuario, contrasenia)){
+            if(main.verificarUsuario(usuario, contrasenia)){
+                Vendedor vendedorLogeado = Objects.requireNonNull(main.buscarVendedor(usuario, contrasenia)) ;
+                main.abrirPanelVendedor(vendedorLogeado);
+            }else {
+                Alerta.saltarAlerta("Error!", "Datos incorrectos, vuelvelo a intentar");
+            }
+
+        }else{
+            Alerta.saltarAlerta("Error!", "Verifica los campos obligatorios y vuelve a intentar");
+        }
+    }
+
+    private boolean verificarCampos(String usuario, String contrasenia) {
+        if(usuario.equals("")){
+            return false;
+        }
+        if(contrasenia.equals("")){
+            return false;
+        }
+        return true;
     }
 
     @FXML
     void restablecerCalveEvent(ActionEvent event) {
 
+    }
+
+    public void setMain(MainSnowAlowe main) {
+        this.main = main;
     }
 
 

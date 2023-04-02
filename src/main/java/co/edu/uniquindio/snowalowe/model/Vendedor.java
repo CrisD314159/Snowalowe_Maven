@@ -1,6 +1,7 @@
 package co.edu.uniquindio.snowalowe.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Vendedor {
 
@@ -19,17 +20,18 @@ public class Vendedor {
     private String direccion;
     private Cuenta cuenta;
     /*---------------------------CONSTRUCTOR--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-    public Vendedor( ArrayList<Producto> productos, ArrayList<Solicitud> solicitudesEnviadas, ArrayList<Solicitud> solicitudesRecibidas, ArrayList<Contacto> contactos, String id, String nombre, String apellido, String cedula, String direccion, ArrayList<Mensaje> mensajes) {
-        this.productos = new ArrayList<>();
-        this.solicitudesEnviadas = new ArrayList<>();
-        this.solicitudesRecibidas = new ArrayList<>();
-        this.contactos = new ArrayList<>();
+    public Vendedor(String id, String nombre, String apellido, String cedula, String direccion, ArrayList<Mensaje> mensajes, Cuenta cuenta) {
+        productos = new ArrayList<Producto>();
+        solicitudesEnviadas = new ArrayList<Solicitud>();
+        solicitudesRecibidas = new ArrayList<Solicitud>();
+        contactos = new ArrayList<>();
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.direccion = direccion;
         this.mensajes = mensajes;
+        this.cuenta = cuenta;
     }
 
     public Vendedor() {
@@ -52,6 +54,7 @@ public class Vendedor {
     public ArrayList<Producto> getProductos() {
         return productos;
     }
+
 
     public void setProductos(ArrayList<Producto> productos) {
         this.productos = productos;
@@ -144,4 +147,15 @@ public class Vendedor {
     public void setMensajes(ArrayList<Mensaje> mensajes) {
         this.mensajes = mensajes;
     }
+
+
+
+    public boolean verificarCuenta(String usuario, String contrasenia) {
+        if(cuenta.getContrasenia().equals(contrasenia)&& cuenta.getUsuario().equals(usuario)){
+            return true;
+        }
+        return false;
+    }
+
+
 }

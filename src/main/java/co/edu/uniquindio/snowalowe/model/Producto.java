@@ -17,9 +17,9 @@ public class Producto {
     private double precio;
 
     private String categoria;
-    private DateTimeFormatter date;
+    private String date;
     /*--------------CONSTRUCTOR------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-    public Producto(ArrayList<Comentario> comentarios, ArrayList<Interaccion> interacciones, String id, String nombre, String codigo, Image imagen, EstadoProducto estado, double precio, DateTimeFormatter date, String categoria) {
+    public Producto(ArrayList<Comentario> comentarios, ArrayList<Interaccion> interacciones, String id, String nombre, String codigo, Image imagen, EstadoProducto estado, double precio, String date, String categoria) {
         this.comentarios = new ArrayList<>();
         this.interacciones = new ArrayList<>();
         this.id = id;
@@ -96,11 +96,11 @@ public class Producto {
         this.precio = precio;
     }
 
-    public DateTimeFormatter getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(DateTimeFormatter date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

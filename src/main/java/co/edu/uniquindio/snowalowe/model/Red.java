@@ -9,13 +9,21 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Red {
+
+    private String nombre;
+
     private ArrayList<Vendedor> listaUsuarios;
     private ArrayList<Cuenta> listaCuentas;
 
     /*----------------CONSTRUCTOR--------------------------------------------------*/
 
-    public Red(ArrayList<Vendedor> usuarios) {
-        this.listaUsuarios = new ArrayList<>();
+    public Red(String nombre) {
+        listaUsuarios = new ArrayList<Vendedor>();
+        listaCuentas = new ArrayList<Cuenta>();
+        this.nombre = nombre;
+    }
+
+    public Red() {
     }
 
     /*----------------METODOS-------------------------------------------------------*/
@@ -40,6 +48,29 @@ public class Red {
         this.listaUsuarios = usuarios;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Vendedor> getListaUsuarios() {
+        return listaUsuarios;
+    }
+
+    public void setListaUsuarios(ArrayList<Vendedor> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+    }
+
+    public ArrayList<Cuenta> getListaCuentas() {
+        return listaCuentas;
+    }
+
+    public void setListaCuentas(ArrayList<Cuenta> listaCuentas) {
+        this.listaCuentas = listaCuentas;
+    }
 
     /*------------METODOS CREATE--------------*/
     public Vendedor nuevoVendedor(String nombre, String apellido, String cedula, String direccion, Cuenta cuenta) throws VendedorException {
@@ -71,7 +102,7 @@ public class Red {
         return false;
     }
 
-    public boolean crearProducto(String nombre, String codigo , String categoria, double precio, Image image, Vendedor vendedor, DateTimeFormatter date) throws ProductoException {
+    public boolean crearProducto(String nombre, String codigo , String categoria, double precio, Image image, Vendedor vendedor, String date) throws ProductoException {
         Producto producto = new Producto();
         producto.setNombre(nombre);
         producto.setCodigo(codigo);
@@ -102,7 +133,7 @@ public class Red {
         cuenta.setUsuario(user);
         cuenta.setContrasenia(password);
 
-        if(existeCuenta(user)==false){
+        if(existeCuenta(user) == false){
             throw new CuentaException("la cuenta ya existe");
         }
         listaCuentas.add(cuenta);
@@ -110,13 +141,12 @@ public class Red {
     }
 
     private boolean existeCuenta(String user) {
-        for (Cuenta cuenta:listaCuentas
-             ) {
+        for (Cuenta cuenta:listaCuentas) {
             if(cuenta.getUsuario().equals(user)){
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 
@@ -151,8 +181,7 @@ public class Red {
 
     public Cuenta buscarCuenta(String user) throws CuentaException {
         Cuenta cuentaEncontrada= null;
-        for (Cuenta cuenta:listaCuentas
-             ) {
+        for (Cuenta cuenta:listaCuentas) {
             if(cuenta.getUsuario().equals(user)){
                 cuentaEncontrada = cuenta;
                 return cuentaEncontrada;
@@ -304,5 +333,32 @@ public class Red {
     }
 
 
+    public Boolean verificarUsuario(String usuario, String contrasenia) {
+        for (Vendedor vendedor:listaUsuarios) {
+            if (vendedor.verificarCuenta(usuario, contrasenia)){
+                return true;
+            }
 
+        }
+        return false;
+    }
+
+    public ArrayList<Vendedor> obtenerListaAmigos(Vendedor vendedorLogeado) {
+        return vendedorLogeado.getListaAmigos();
+    }
+
+    public ArrayList<Producto> obtenerListaProductos(Vendedor vendedorLogeado) {
+        return vendedorLogeado.getProductos();
+    }
+
+    public Vendedor obtenerVendedor(String usuario, String contrasenia) {
+        Vendedor vendedorEncontrado = null;
+        for (Vendedor vendedor:listaUsuarios) {
+            if (vendedor.verificarCuenta(usuario, contrasenia)){
+                vendedorEncontrado = vendedor;
+                return vendedorEncontrado;
+            }
+        }
+        return vendedorEncontrado;
+    }
 }
