@@ -45,6 +45,6 @@
             <Font name="Arial" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="CloseWindowButton" layoutX="558.0" layoutY="2.0" mnemonicParsing="false" text="X" />
+      <Button fx:id="CloseWindowButton" layoutX="558.0" layoutY="2.0" mnemonicParsing="false" text="X" onAction="#onCloseAction"/>
    </children>
 </AnchorPane>
