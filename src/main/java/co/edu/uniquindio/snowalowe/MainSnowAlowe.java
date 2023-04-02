@@ -4,7 +4,9 @@ import co.edu.uniquindio.snowalowe.controllers.Snowalowe;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -16,7 +18,8 @@ public class MainSnowAlowe extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().clear();
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Style.css")).toExternalForm());
-        stage.setTitle("Bienvenid@ a Snowalowe");
+        scene.setFill(Color.TRANSPARENT);
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

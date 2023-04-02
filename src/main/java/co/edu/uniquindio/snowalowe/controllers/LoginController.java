@@ -13,6 +13,8 @@ public class LoginController {
     @FXML
     public AnchorPane PanelPrincipal;
     @FXML
+    public Button CloseWindowButton;
+    @FXML
     private Label SesionLabel;
 
     @FXML

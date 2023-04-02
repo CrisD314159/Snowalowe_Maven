@@ -6,44 +6,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="PanelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.snowalowe.controllers.LoginController">
+<AnchorPane fx:id="PanelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.snowalowe.controllers.LoginController">
    <children>
-      <Label fx:id="SesionLabel" layoutX="40.0" layoutY="55.0" prefHeight="61.0" prefWidth="520.0" text="Inicia sesión en Snowalowe!" textAlignment="CENTER">
+      <Label fx:id="SesionLabel" layoutX="40.0" layoutY="70.0" prefHeight="61.0" prefWidth="520.0" text="Inicia sesión en Snowalowe!" textAlignment="CENTER">
          <font>
             <Font name="Arial" size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="userField" layoutX="238.0" layoutY="162.0" prefHeight="26.0" prefWidth="216.0" />
-      <TextField fx:id="passwordLabel" layoutX="238.0" layoutY="223.0" prefHeight="26.0" prefWidth="216.0" />
-      <Label fx:id="userLabel" layoutX="170.0" layoutY="167.0" text="Usuario:">
+      <TextField fx:id="userField" layoutX="238.0" layoutY="177.0" prefHeight="26.0" prefWidth="216.0" />
+      <TextField fx:id="passwordLabel" layoutX="238.0" layoutY="238.0" prefHeight="26.0" prefWidth="216.0" />
+      <Label fx:id="userLabel" layoutX="170.0" layoutY="182.0" text="Usuario:">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="passwordField" layoutX="148.0" layoutY="228.0" text="Contraseña:">
+      <Label fx:id="passwordField" layoutX="148.0" layoutY="243.0" text="Contraseña:">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="logButton" layoutX="364.0" layoutY="287.0" mnemonicParsing="false" onAction="#loginEvent" text="Iniciar sesión ">
+      <Button fx:id="logButton" layoutX="364.0" layoutY="302.0" mnemonicParsing="false" onAction="#loginEvent" text="Iniciar sesión ">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="resetpasswordButton" layoutX="115.0" layoutY="287.0" mnemonicParsing="false" onAction="#restablecerCalveEvent" text="Restablecer contraseña ">
+      <Button fx:id="resetpasswordButton" layoutX="115.0" layoutY="302.0" mnemonicParsing="false" onAction="#restablecerCalveEvent" text="Restablecer contraseña ">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Button>
-      <Label fx:id="noAccountLabel" layoutX="118.0" layoutY="360.0" text="No tienes una cuenta en Snowalowe?">
+      <Label fx:id="noAccountLabel" layoutX="118.0" layoutY="375.0" text="No tienes una cuenta en Snowalowe?">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="createAccountButton" layoutX="363.0" layoutY="355.0" mnemonicParsing="false" onAction="#crearCuentaEvent" text="Crea una aquí">
+      <Button fx:id="createAccountButton" layoutX="363.0" layoutY="370.0" mnemonicParsing="false" onAction="#crearCuentaEvent" text="Crea una aquí">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Button>
+      <Button fx:id="CloseWindowButton" layoutX="558.0" layoutY="2.0" mnemonicParsing="false" text="X" />
    </children>
 </AnchorPane>
