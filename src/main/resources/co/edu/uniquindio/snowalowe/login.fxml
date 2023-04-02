@@ -40,7 +40,7 @@
             <Font name="Arial" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="createAccountButton" layoutX="363.0" layoutY="356.0" mnemonicParsing="false" onAction="#crearCuentaEvent" text="Crea una aqui">
+      <Button fx:id="createAccountButton" layoutX="363.0" layoutY="355.0" mnemonicParsing="false" onAction="#crearCuentaEvent" text="Crea una aquí">
          <font>
             <Font name="Arial" size="13.0" />
          </font>

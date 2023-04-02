@@ -4,13 +4,27 @@
 
 #SesionLabel{
     -fx-font-size: 28px;
-    -fx-font-family: "Yu Gothic UI Semilight";
+    -fx-font-family: "Yu Gothic UI Semibold";
     -fx-alignment: center;
+}
+
+#createAccountButton{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: inherit;
+    -fx-underline: true;
+    -fx-alignment: center;
+}
+
+#createAccountButton:hover{
+    -fx-text-fill: rgb(255, 172, 139);
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
 }
 
 .button{
     -fx-font-size: 14px;
-    -fx-font-family: "Yu Gothic UI Semilight";
+    -fx-font-family: "Yu Gothic UI";
     -fx-alignment: center;
     -fx-background-color: rgb(255, 172, 139);
     -fx-background-radius: 6px;
@@ -26,7 +40,7 @@
 
 .label{
     -fx-font-size: 14px;
-    -fx-font-family: "Yu Gothic UI Semilight";
+    -fx-font-family: "Yu Gothic UI";
     -fx-alignment: center;
 }
 
