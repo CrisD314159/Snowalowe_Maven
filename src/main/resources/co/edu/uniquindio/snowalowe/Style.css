@@ -1,28 +1,38 @@
 #PanelPrincipal{
-    -fx-background-color: linear-gradient(to top right, #ff7f50, #6a5acd);
+    -fx-background-color: linear-gradient(to top right, rgb(255, 127, 80), rgb(106, 90, 205));
 }
 
 #SesionLabel{
-    -fx-font-size: 25px;
+    -fx-font-size: 28px;
     -fx-font-family: "Yu Gothic UI Semilight";
     -fx-alignment: center;
 }
 
 .button{
+    -fx-font-size: 14px;
     -fx-font-family: "Yu Gothic UI Semilight";
     -fx-alignment: center;
-    -fx-background-color: burlywood;
+    -fx-background-color: rgb(255, 172, 139);
     -fx-background-radius: 6px;
-    -fx-border-color: black;
+    -fx-border-color: rgb(255, 154, 114);
     -fx-border-radius: 6px;
-    -fx-effect: dropshadow(gaussian, black, 6, .15, 1, 1);
-}
-
-.label{
-    -fx-font-family: "Yu Gothic UI Semilight";
-    -fx-alignment: center;
+    -fx-effect: dropshadow(one-pass-box, black, 6, .15, 2, 2);
 }
 
 .button:hover{
+    -fx-scale-y: 0.96;
+    -fx-scale-x: 0.96;
+}
 
+.label{
+    -fx-font-size: 14px;
+    -fx-font-family: "Yu Gothic UI Semilight";
+    -fx-alignment: center;
+}
+
+.text-field{
+    -fx-background-color: #FFBCA1;
+    -fx-border-color: #FFA17B;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
 }

@@ -18,6 +18,7 @@ public class MainSnowAlowe extends Application {
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Style.css")).toExternalForm());
         stage.setTitle("Bienvenid@ a Snowalowe");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

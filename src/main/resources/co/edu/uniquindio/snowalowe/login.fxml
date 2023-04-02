@@ -20,7 +20,7 @@
             <Font name="Arial" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="passwordField" layoutX="159.0" layoutY="228.0" text="Contraseña:">
+      <Label fx:id="passwordField" layoutX="148.0" layoutY="228.0" text="Contraseña:">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
@@ -35,12 +35,12 @@
             <Font name="Arial" size="13.0" />
          </font>
       </Button>
-      <Label fx:id="noAccountLabel" layoutX="115.0" layoutY="360.0" text="No tienes una cuenta en Snowalowe?">
+      <Label fx:id="noAccountLabel" layoutX="118.0" layoutY="360.0" text="No tienes una cuenta en Snowalowe?">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="createAccountButton" layoutX="346.0" layoutY="355.0" mnemonicParsing="false" onAction="#crearCuentaEvent" text="Crea una aqui">
+      <Button fx:id="createAccountButton" layoutX="363.0" layoutY="356.0" mnemonicParsing="false" onAction="#crearCuentaEvent" text="Crea una aqui">
          <font>
             <Font name="Arial" size="13.0" />
          </font>

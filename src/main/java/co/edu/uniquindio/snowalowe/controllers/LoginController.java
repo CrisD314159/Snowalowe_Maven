@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 public class LoginController {
     @FXML
@@ -36,6 +38,11 @@ public class LoginController {
 
     @FXML
     private Label userLabel;
+
+    @FXML
+    public void initialize(){
+
+    }
 
     @FXML
     void crearCuentaEvent(ActionEvent event) {
