@@ -1,30 +1,38 @@
 package co.edu.uniquindio.snowalowe.snowalowe.model;
 
+import javafx.scene.image.Image;
+
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Producto {
 
-    private ArrayList<Mensaje> comentarios;
+    private ArrayList<Comentario> comentarios;
     private ArrayList<Interaccion> interacciones;
     private String id;
     private String nombre;
     private String codigo;
-    private String imagen;
+    private Image image;
     private EstadoProducto estado;
     private double precio;
+
+    private String categoria;
     private DateTimeFormatter date;
     /*--------------CONSTRUCTOR------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-    public Producto(ArrayList<Mensaje> comentarios, ArrayList<Interaccion> interacciones, String id, String nombre, String codigo, String imagen, EstadoProducto estado, double precio, DateTimeFormatter date) {
+    public Producto(ArrayList<Comentario> comentarios, ArrayList<Interaccion> interacciones, String id, String nombre, String codigo, Image imagen, EstadoProducto estado, double precio, DateTimeFormatter date, String categoria) {
         this.comentarios = new ArrayList<>();
         this.interacciones = new ArrayList<>();
         this.id = id;
         this.nombre = nombre;
         this.codigo = codigo;
-        this.imagen = imagen;
+        this.image = imagen;
         this.estado = estado;
         this.precio = precio;
         this.date = date;
+        this.categoria = categoria;
+    }
+
+    public Producto() {
     }
     /*----------------METODOS--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -32,11 +40,11 @@ public class Producto {
 
     /*----------------GETTERS & SETTERS------------------------------------------------------------------------*/
 
-    public ArrayList<Mensaje> getComentarios() {
+    public ArrayList<Comentario> getComentarios() {
         return comentarios;
     }
 
-    public void setComentarios(ArrayList<Mensaje> comentarios) {
+    public void setComentarios(ArrayList<Comentario> comentarios) {
         this.comentarios = comentarios;
     }
 
@@ -72,14 +80,6 @@ public class Producto {
         this.codigo = codigo;
     }
 
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
     public EstadoProducto getEstado() {
         return estado;
     }
@@ -102,5 +102,21 @@ public class Producto {
 
     public void setDate(DateTimeFormatter date) {
         this.date = date;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 }

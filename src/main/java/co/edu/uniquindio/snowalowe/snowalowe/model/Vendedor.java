@@ -4,19 +4,22 @@ import java.util.ArrayList;
 
 public class Vendedor {
 
-    private ArrayList<Chat> chats;
-    private ArrayList <Producto> productos;
+
+
+    private ArrayList<Mensaje> mensajes;
+    private ArrayList<Vendedor> listaAmigos;
+    private ArrayList<Producto> productos;
     private ArrayList<Solicitud> solicitudesEnviadas;
     private ArrayList<Solicitud> solicitudesRecibidas;
-    private  ArrayList<Contacto> contactos;
+    private ArrayList<Contacto> contactos;
     private String id ;
     private String nombre;
     private String apellido;
     private String cedula;
     private String direccion;
+    private Cuenta cuenta;
     /*---------------------------CONSTRUCTOR--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-    public Vendedor(ArrayList<Chat> chats, ArrayList<Producto> productos, ArrayList<Solicitud> solicitudesEnviadas, ArrayList<Solicitud> solicitudesRecibidas, ArrayList<Contacto> contactos, String id, String nombre, String apellido, String cedula, String direccion) {
-        this.chats = new ArrayList<>();
+    public Vendedor( ArrayList<Producto> productos, ArrayList<Solicitud> solicitudesEnviadas, ArrayList<Solicitud> solicitudesRecibidas, ArrayList<Contacto> contactos, String id, String nombre, String apellido, String cedula, String direccion, ArrayList<Mensaje> mensajes) {
         this.productos = new ArrayList<>();
         this.solicitudesEnviadas = new ArrayList<>();
         this.solicitudesRecibidas = new ArrayList<>();
@@ -26,6 +29,10 @@ public class Vendedor {
         this.apellido = apellido;
         this.cedula = cedula;
         this.direccion = direccion;
+        this.mensajes = mensajes;
+    }
+
+    public Vendedor() {
     }
     /*------------------------METODOS-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -40,13 +47,7 @@ public class Vendedor {
 
     }
     /*-----------------------GETTERS & SETERS -------------------------------------------*/
-    public ArrayList<Chat> getChats() {
-        return chats;
-    }
 
-    public void setChats(ArrayList<Chat> chats) {
-        this.chats = chats;
-    }
 
     public ArrayList<Producto> getProductos() {
         return productos;
@@ -118,5 +119,29 @@ public class Vendedor {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public ArrayList<Vendedor> getListaAmigos() {
+        return listaAmigos;
+    }
+
+    public void setListaAmigos(ArrayList<Vendedor> listaAmigos) {
+        this.listaAmigos = listaAmigos;
+    }
+
+    public Cuenta getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
+    }
+
+    public ArrayList<Mensaje> getMensajes() {
+        return mensajes;
+    }
+
+    public void setMensajes(ArrayList<Mensaje> mensajes) {
+        this.mensajes = mensajes;
     }
 }

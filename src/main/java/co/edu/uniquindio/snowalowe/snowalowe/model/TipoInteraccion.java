@@ -1,6 +1,6 @@
 package co.edu.uniquindio.snowalowe.snowalowe.model;
 
-public enum Tipo {
+public enum TipoInteraccion {
 
     MEGUSTA;
 }

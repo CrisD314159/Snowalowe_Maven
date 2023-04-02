@@ -4,12 +4,15 @@ public class Interaccion {
 
     private String id;
     private String idAutor;
-    private Tipo tipo;
+    private TipoInteraccion tipo;
     /*--------------CONSTRUCTOR-------------------------------------*/
-    public Interaccion(String id, String idAutor, Tipo tipo) {
+    public Interaccion(String id, String idAutor, TipoInteraccion tipo) {
         this.id = id;
         this.idAutor = idAutor;
         this.tipo = tipo;
+    }
+
+    public Interaccion() {
     }
     /*----------------METODOS---------------------------------------*/
 
@@ -23,7 +26,19 @@ public class Interaccion {
         return idAutor;
     }
 
-    public Tipo getTipo() {
+    public TipoInteraccion getTipo() {
         return tipo;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setIdAutor(String idAutor) {
+        this.idAutor = idAutor;
+    }
+
+    public void setTipo(TipoInteraccion tipo) {
+        this.tipo = tipo;
     }
 }

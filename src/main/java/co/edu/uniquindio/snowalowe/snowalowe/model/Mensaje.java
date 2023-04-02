@@ -14,6 +14,9 @@ public class Mensaje {
         this.descripcion = descripcion;
         this.date = date;
     }
+
+    public Mensaje() {
+    }
     /*----------------METODOS-------------------------------------------------------------*/
 
     public String getId() {
@@ -30,5 +33,21 @@ public class Mensaje {
 
     public DateTimeFormatter getDate() {
         return date;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setIdAutor(String idAutor) {
+        this.idAutor = idAutor;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setDate(DateTimeFormatter date) {
+        this.date = date;
     }
 }

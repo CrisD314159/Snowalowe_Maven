@@ -7,4 +7,5 @@ module co.edu.uniquindio.snowalowe.snowalowe {
     exports co.edu.uniquindio.snowalowe.snowalowe;
     exports co.edu.uniquindio.snowalowe.snowalowe.controllers;
     opens co.edu.uniquindio.snowalowe.snowalowe.controllers to javafx.fxml;
+
 }
