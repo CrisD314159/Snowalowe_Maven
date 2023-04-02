@@ -1,0 +1,29 @@
+#PanelPrincipal{
+    -fx-background-color: linear-gradient(to top right, #ff7f50, #6a5acd);
+}
+
+#SesionLabel{
+    -fx-font-size: 25px;
+    -fx-font-family: "Yu Gothic UI Semilight";
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+}
+
+.button{
+    -fx-font-family: "Yu Gothic UI Semilight";
+    -fx-alignment: center;
+    -fx-background-color: burlywood;
+    -fx-background-radius: 6px;
+    -fx-border-color: black;
+    -fx-border-radius: 6px;
+    -fx-effect: dropshadow(gaussian, black, 6, .15, 1, 1);
+}
+
+.label{
+    -fx-font-family: "Yu Gothic UI Semilight";
+    -fx-alignment: center;
+}
+
+.button:hover{
+
+}
