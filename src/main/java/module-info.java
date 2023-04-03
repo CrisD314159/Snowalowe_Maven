@@ -1,4 +1,4 @@
-module co.edu.uniquindio.snowalowe.snowalowe {
+module co.edu.uniquindio.snowalowe {
     requires javafx.controls;
     requires javafx.fxml;
 
