@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                co.edu.uniquindio.snowalowe.snowalowe/co.edu.uniquindio.snowalowe.snowalowe.MainSnowAlowe
+                                co.edu.uniquindio.snowalowe/co.edu.uniquindio.snowalowe.MainSnowAlowe
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

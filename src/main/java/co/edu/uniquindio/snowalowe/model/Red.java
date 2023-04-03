@@ -124,7 +124,7 @@ public class Red {
         producto.setEstado(EstadoProducto.PUBLICADO);
         producto.setImage(image);
         producto.setDate(date);
-        if(existeProducto(codigo, vendedor) == true){
+        if(existeProducto(codigo, vendedor)){
             throw new ProductoException("El producto ya existe");
         }
         vendedor.getProductos().add(producto);
