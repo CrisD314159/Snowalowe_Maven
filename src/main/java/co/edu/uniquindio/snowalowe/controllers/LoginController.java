@@ -10,13 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-<<<<<<< HEAD
-=======
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
->>>>>>> 7e19399d2d09df26533732a7bb8a95f6dc4033fe
 
 import java.io.IOException;
 import java.util.Objects;
@@ -54,17 +51,11 @@ public class LoginController implements Alerta {
     private Label userLabel;
 
     @FXML
-<<<<<<< HEAD
     void crearCuentaEvent(ActionEvent event) throws IOException {
         crearCuentaAction();
-=======
-    public void initialize(){
-
     }
 
-    @FXML
-    void crearCuentaEvent(ActionEvent event) {
->>>>>>> 7e19399d2d09df26533732a7bb8a95f6dc4033fe
+    public void initialize(){
 
     }
 
