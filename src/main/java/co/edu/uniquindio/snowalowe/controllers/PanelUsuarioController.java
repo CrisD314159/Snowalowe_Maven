@@ -60,9 +60,6 @@ public class PanelUsuarioController {
     private Label fechaLabel;
 
     @FXML
-    private Label txtCantidadMeGusta;
-
-    @FXML
     private Button crearPublicacionButton;
 
     @FXML

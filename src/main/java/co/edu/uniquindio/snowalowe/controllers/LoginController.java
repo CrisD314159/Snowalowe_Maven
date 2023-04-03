@@ -22,8 +22,7 @@ import java.util.Objects;
 public class LoginController {
 
     MainSnowAlowe main;
-    @FXML
-    public Button CloseWindowButton;
+
     @FXML
     private Label SesionLabel;
 

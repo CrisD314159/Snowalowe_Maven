@@ -22,7 +22,7 @@
         <Button fx:id="seleccionarImagenButton" layoutX="238.0" layoutY="227.0" mnemonicParsing="false" onAction="#seleccionarImagen" text="Seleccionar imagen" />
         <Button fx:id="actualizarButton" layoutX="335.0" layoutY="500.0" mnemonicParsing="false" onAction="#actualizarProducto" text="Actualizar" />
         <Button fx:id="irAtrasButton" layoutX="211.0" layoutY="501.0" mnemonicParsing="false" onAction="#irAtras" text="Atras" />
-        <ChoiceBox fx:id="estadoChoice" layoutX="244.0" layoutY="401.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="estadoChoice" layoutX="241.0" layoutY="401.0" prefWidth="150.0" />
         <Pane id="#pane3" layoutX="200.0" layoutY="33.0" prefHeight="172.0" prefWidth="200.0">
             <children>
                 <ImageView fx:id="imagenProducto" fitHeight="168.0" fitWidth="198.0" layoutX="1.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
