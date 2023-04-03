@@ -8,15 +8,13 @@ import co.edu.uniquindio.snowalowe.model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-<<<<<<< HEAD
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-=======
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
->>>>>>> 7e19399d2d09df26533732a7bb8a95f6dc4033fe
+
 
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
@@ -43,7 +41,6 @@ public class MainSnowAlowe extends Application {
         scene.getStylesheets().clear();
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Style.css")).toExternalForm());
         scene.setFill(Color.TRANSPARENT);
-        stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="sttage" prefHeight="511.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redVendedores.controllers.CrearPublicacionController">
+<AnchorPane id="sttage" prefHeight="511.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.snowalowe.controllers.CrearPublicacionController">
     <children>
         <Label layoutX="112.0" layoutY="252.0" text="Nombre:">
             <font>

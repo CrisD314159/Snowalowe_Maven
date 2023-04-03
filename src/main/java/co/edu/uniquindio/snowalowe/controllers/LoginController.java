@@ -10,18 +10,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-<<<<<<< HEAD
-=======
+
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
->>>>>>> 7e19399d2d09df26533732a7bb8a95f6dc4033fe
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class LoginController implements Alerta {
+public class LoginController {
 
     MainSnowAlowe main;
     @FXML
@@ -54,18 +52,8 @@ public class LoginController implements Alerta {
     private Label userLabel;
 
     @FXML
-<<<<<<< HEAD
     void crearCuentaEvent(ActionEvent event) throws IOException {
         crearCuentaAction();
-=======
-    public void initialize(){
-
-    }
-
-    @FXML
-    void crearCuentaEvent(ActionEvent event) {
->>>>>>> 7e19399d2d09df26533732a7bb8a95f6dc4033fe
-
     }
 
     private void crearCuentaAction() throws IOException {
@@ -78,7 +66,23 @@ public class LoginController implements Alerta {
 
     }
 
-    private void loginAction() throws VendedorException, IOException {
+
+
+    @FXML
+    void restablecerCalveEvent(ActionEvent event) {
+
+    }
+
+
+
+    public void onCloseAction(ActionEvent e) {
+        Node source = (Node) e.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
+
+    private void loginAction() throws IOException {
         String usuario = "";
         String contrasenia = "";
         usuario = userField.getText();
@@ -106,19 +110,8 @@ public class LoginController implements Alerta {
         return true;
     }
 
-    @FXML
-    void restablecerCalveEvent(ActionEvent event) {
-
-    }
-
-    public void setMain(MainSnowAlowe main) {
-        this.main = main;
-    }
-
-
-    public void onCloseAction(ActionEvent e) {
-        Node source = (Node) e.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+    public void setMain(MainSnowAlowe mainSnowAlowe) {
+        this.main = mainSnowAlowe;
     }
 }
+

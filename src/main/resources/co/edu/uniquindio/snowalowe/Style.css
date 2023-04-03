@@ -1,6 +1,6 @@
-#PanelPrincipal{
+.root{
     -fx-background-color: linear-gradient(to top right, rgb(255, 127, 80), rgb(106, 90, 205));
-    -fx-background-radius: 15px;
+
 }
 
 #SesionLabel{
