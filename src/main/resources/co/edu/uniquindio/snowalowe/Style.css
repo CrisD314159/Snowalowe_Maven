@@ -29,6 +29,8 @@
     -fx-effect: inherit;
     -fx-font-size: 20px;
     -fx-alignment: top-left;
+    -fx-font-family: "Yu Gothic UI Semibold";
+    -fx-font-style: oblique;
 }
 
 #CloseWindowButton:hover{
@@ -51,7 +53,7 @@
 .button:hover{
     -fx-scale-y: .96;
     -fx-scale-x: .96;
-    -fx-effect: dropshadow(gaussian, black, 6, .2, 2, 2);
+    -fx-effect: dropshadow(gaussian, black, 6, .5, 2, 2);
 }
 
 .label{
@@ -62,7 +64,16 @@
 
 .text-field{
     -fx-background-color: rgba(255, 188, 161, 0.8);
-    -fx-border-color: #FFA17B;
+    -fx-border-color: rgb(255, 161, 123);
     -fx-border-radius: 6px;
     -fx-background-radius: 6px;
+}
+
+.table-view{
+    -fx-font-size: 14px;
+    -fx-font-family: "Yu Gothic UI";
+    -fx-background-color: rgb(255, 172, 139);
+    -fx-background-radius: 6px;
+    -fx-border-color: rgb(255, 154, 114);
+    -fx-border-radius: 6px;
 }
