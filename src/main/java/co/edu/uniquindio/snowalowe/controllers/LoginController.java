@@ -5,10 +5,18 @@ import co.edu.uniquindio.snowalowe.exceptions.VendedorException;
 import co.edu.uniquindio.snowalowe.model.Vendedor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+<<<<<<< HEAD
+=======
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
+>>>>>>> 7e19399d2d09df26533732a7bb8a95f6dc4033fe
 
 import java.io.IOException;
 import java.util.Objects;
@@ -16,6 +24,8 @@ import java.util.Objects;
 public class LoginController implements Alerta {
 
     MainSnowAlowe main;
+    @FXML
+    public Button CloseWindowButton;
     @FXML
     private Label SesionLabel;
 
@@ -44,8 +54,17 @@ public class LoginController implements Alerta {
     private Label userLabel;
 
     @FXML
+<<<<<<< HEAD
     void crearCuentaEvent(ActionEvent event) throws IOException {
         crearCuentaAction();
+=======
+    public void initialize(){
+
+    }
+
+    @FXML
+    void crearCuentaEvent(ActionEvent event) {
+>>>>>>> 7e19399d2d09df26533732a7bb8a95f6dc4033fe
 
     }
 
@@ -97,4 +116,9 @@ public class LoginController implements Alerta {
     }
 
 
+    public void onCloseAction(ActionEvent e) {
+        Node source = (Node) e.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
 }
