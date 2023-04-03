@@ -60,19 +60,22 @@ public class MainSnowAlowe extends Application {
     }
 
     public void abrirPanelVendedor(Vendedor vendedor) throws IOException {
+
+
         FXMLLoader fxmlLoader = new FXMLLoader(MainSnowAlowe.class.getResource("PanelUsuario.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         PanelUsuarioController controller= fxmlLoader.getController();
-        controller.setMain(this);
         controller.mostrarBienvenida(vendedor);
+        controller.setMain(this);
+
 
         scene.getStylesheets().clear();
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Style.css")).toExternalForm());
         stage.setTitle("Bienvenid@ a tu panel principal de Snowalowe");
         stage.setScene(scene);
         stage.show();
-        
+
     }
 
     public void abrirCrearCuenta() throws IOException {
@@ -119,7 +122,20 @@ public class MainSnowAlowe extends Application {
         
     }
 
-    public void mostrarCrearPublicacion(Vendedor vendedorLogeado) {
+    public void mostrarCrearPublicacion(Vendedor vendedorLogeado) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainSnowAlowe.class.getResource("CrearPublicacionView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        CrearPublicacionController controller = fxmlLoader.getController();
+        controller.setMain(this);
+        controller.obtenertvendedor(vendedorLogeado);
+
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Style.css")).toExternalForm());
+        stage.setTitle("Crea tu producto");
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     public ArrayList<Vendedor> obtenerListaVendedoresAliados(Vendedor vendedorLogeado) {
@@ -130,7 +146,19 @@ public class MainSnowAlowe extends Application {
         return snowalowe.obtenerListaProductos(vendedorLogeado);
     }
 
-    public void mostrarVentanaMensajes(Vendedor vendedorLogeado) {
+    public void mostrarVentanaMensajes(Vendedor vendedorLogeado) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainSnowAlowe.class.getResource("MensajesEntrantes.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        MensajesENtrantesController controller = fxmlLoader.getController();
+        controller.setMain(this);
+        controller.obtenerVendedorLogeado(vendedorLogeado);
+
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Style.css")).toExternalForm());
+        stage.setTitle("Crea tu producto");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void mostrarMuroVendedorAliado(Vendedor vendedorLogeado, Vendedor vendedorSeleccionado) {
@@ -153,5 +181,25 @@ public class MainSnowAlowe extends Application {
 
     public boolean crearPublicacion(String nombre, String codigo, double precio, String categoria, Image image, Vendedor vendedorLogeado, String date) throws ProductoException {
         return snowalowe.crearProducto(nombre, codigo, categoria, precio, image, vendedorLogeado, date);
+    }
+
+    public ArrayList<Mensaje> obtenerListaMensajes(Vendedor vendedorLogeado) {
+        return vendedorLogeado.getMensajes();
+    }
+
+    public boolean respoderMensaje(String mensaje, Vendedor vendedorLogeado, Vendedor autor) {
+        return snowalowe.responderMensaje(mensaje, autor, vendedorLogeado);
+    }
+
+    public Comentario agregarComenterio(Vendedor vendedorLogeado, Vendedor vendedorAliado, String mensaje) {
+        return snowalowe.agregarComentario(vendedorLogeado, vendedorAliado, mensaje);
+    }
+
+    public void mostrarChat(Vendedor vendedorLogeado, Vendedor vendedorAliado) {
+
+    }
+
+    public boolean enviarMensaje(String mensaje, Vendedor vendedorLogeado, Vendedor vendedorAliado) {
+        return snowalowe.enviarMensaje(vendedorLogeado, vendedorAliado, mensaje);
     }
 }

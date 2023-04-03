@@ -5,13 +5,11 @@ import co.edu.uniquindio.snowalowe.exceptions.ProductoException;
 import co.edu.uniquindio.snowalowe.exceptions.VendedorException;
 import javafx.scene.image.Image;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Red {
 
     private String nombre;
-
     private ArrayList<Vendedor> listaUsuarios;
     private ArrayList<Cuenta> listaCuentas;
 
@@ -21,6 +19,19 @@ public class Red {
         listaUsuarios = new ArrayList<Vendedor>();
         listaCuentas = new ArrayList<Cuenta>();
         this.nombre = nombre;
+        inicializarDatos();
+    }
+
+    private void inicializarDatos() {
+        Vendedor vendedor = new Vendedor();
+        vendedor.setNombre("pepe");
+        vendedor.setApellido("Martinez");
+        vendedor.setCedula("123");
+        vendedor.setDireccion("en una casa");
+        Cuenta cuenta = new Cuenta("pepito","123");
+        vendedor.setCuenta(cuenta);
+        listaCuentas.add(cuenta);
+        listaUsuarios.add(vendedor);
     }
 
     public Red() {
@@ -77,6 +88,8 @@ public class Red {
         Vendedor vendedor = new Vendedor();
         ArrayList<Producto> listaProductos = new ArrayList<Producto>();
         ArrayList<Vendedor> listaVendedoresAliados = new ArrayList<Vendedor>();
+        ArrayList<Mensaje> listaMensajes = new ArrayList<Mensaje>();
+        vendedor.setMensajes(listaMensajes);
         vendedor.setNombre(nombre);
         vendedor.setApellido(apellido);
         vendedor.setCedula(cedula);
@@ -272,13 +285,12 @@ public class Red {
     }
 
     /*-----------METODOS----------------*/
-    public Mensaje enviarMensaje(Vendedor vendedorLogeado, Vendedor vendedorAliado, String contenido) {
-
+    public boolean enviarMensaje(Vendedor vendedorLogeado, Vendedor vendedorAliado, String contenido) {
         Mensaje mensaje = new Mensaje();
         mensaje.setIdAutor(vendedorLogeado.getNombre());
         mensaje.setDescripcion(contenido);
         vendedorAliado.getMensajes().add(mensaje);
-        return mensaje;
+        return true;
     }
 
     public boolean responderMensaje(String mensaje, Vendedor autor, Vendedor vendedorLogeado) {
@@ -360,5 +372,13 @@ public class Red {
             }
         }
         return vendedorEncontrado;
+    }
+
+    public Comentario agregarComentario(Vendedor vendedorLogeado, Vendedor vendedorAliado, String mensaje) {
+        Comentario comentario = new Comentario();
+        comentario.setAutor(vendedorLogeado);
+        comentario.setContenido(mensaje);
+        //vendedorAliado.add(comentario);
+        return comentario;
     }
 }

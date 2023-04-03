@@ -25,7 +25,7 @@ public class PanelUsuarioController {
 
     private MainSnowAlowe main;
 
-    private Vendedor usuario;
+    private Vendedor vendedor;
     @FXML
     private Button actualizarProductoButton;
 
@@ -100,12 +100,12 @@ public class PanelUsuarioController {
 
     @FXML
     void actualizarProducto(ActionEvent event) throws IOException {
-        main.mostrarActualizarProducto(productoSeleccionado, usuario);
+        main.mostrarActualizarProducto(productoSeleccionado, vendedor);
     }
 
     @FXML
-    void crearPublucacion(ActionEvent event) {
-        main.mostrarCrearPublicacion(usuario);
+    void crearPublucacion(ActionEvent event) throws IOException {
+        main.mostrarCrearPublicacion(vendedor);
 
     }
 
@@ -119,7 +119,7 @@ public class PanelUsuarioController {
     private void eliminarProductoAction()  {
         String codigo = "";
         codigo = productoSeleccionado.getCodigo();
-        if(main.eliminarProducto(codigo, usuario)){
+        if(main.eliminarProducto(codigo, vendedor)){
            Alerta.saltarAlerta("Listo", "Producto eliminado");
             listaProductosData.remove(productoSeleccionado);
             limpiarCamposProducto();
@@ -139,13 +139,13 @@ public class PanelUsuarioController {
 
     @FXML
     void irMuroVendedor(ActionEvent event) {
-        main.mostrarMuroVendedorAliado(usuario, vendedorSeleccionado);
+        main.mostrarMuroVendedorAliado(vendedor, vendedorSeleccionado);
 
     }
 
     @FXML
     void obtenerSolicitudesAmistad(ActionEvent event) {
-        main.mostrarRecomendaciones(usuario);
+        main.mostrarRecomendaciones(vendedor);
     }
 
     @FXML
@@ -191,18 +191,18 @@ public class PanelUsuarioController {
     }
 
     private ObservableList<Vendedor> obtenerListaVendedoresAliados() {
-        listaVendedoresData.addAll(main.obtenerListaVendedoresAliados(usuario));
+        listaVendedoresData.addAll(main.obtenerListaVendedoresAliados(vendedor));
         return listaVendedoresData;
     }
 
-    private ObservableList<Producto> obtenerListaProductos() {
 
-       listaProductosData.addAll(main.obtenerListaProductos(usuario));
+    private ObservableList<Producto> obtenerListaProductos() {
+       listaProductosData.addAll(main.obtenerListaProductos(vendedor));
         return listaProductosData;
     }
 
     public void mostrarBienvenida(Vendedor vendedor) {
-        this.usuario = vendedor;
+        this.vendedor = vendedor;
         String nombre ="";
         nombre = vendedor.getNombre();
         bienvenidaLabel.setText("Que bueno verte de nuevo, " + nombre + "!!");
@@ -216,8 +216,8 @@ public class PanelUsuarioController {
     }
 
     @FXML
-    void mostrarMensajes(ActionEvent event) {
-        main.mostrarVentanaMensajes(usuario);
+    void mostrarMensajes(ActionEvent event) throws IOException {
+        main.mostrarVentanaMensajes(vendedor);
 
     }
 }
