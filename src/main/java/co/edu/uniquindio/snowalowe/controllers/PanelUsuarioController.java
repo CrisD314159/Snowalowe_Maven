@@ -131,6 +131,7 @@ public class PanelUsuarioController {
         categoriaProductoLabel.setText("");
         precioProductoLabel.setText("");
         codigoProductoLabel.setText("");
+        fechaLabel.setText("");
         imagenProducto.setImage(null);
     }
 
