@@ -15,6 +15,8 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 public class CrearCuentaController implements Alerta{
+
+    ModelFactoryController singleton;
     MainSnowAlowe main;
 
     @FXML
@@ -62,6 +64,9 @@ public class CrearCuentaController implements Alerta{
     @FXML
     private TextField ususarioField;
 
+
+
+
     @FXML
     void IrAtrasEvent(ActionEvent event) throws IOException {
         IrAtrasAction();
@@ -88,8 +93,8 @@ public class CrearCuentaController implements Alerta{
         usuario = ususarioField.getText();
         contrasenia = contraseniaField.getText();
         if(verificarCampos(nombre, apellido, direccion, cedula, usuario, contrasenia)){
-            Cuenta cuenta = main.crearCuenta(usuario, contrasenia);
-            Vendedor crearUsuario = main.crearUsuario(nombre, apellido, direccion, cedula, cuenta);
+            Cuenta cuenta = singleton.crearCuenta(usuario, contrasenia);
+            Vendedor crearUsuario = singleton.crearUsuario(nombre, apellido, direccion, cedula, cuenta);
             if(crearUsuario != null){
                 Alerta.saltarAlerta("Listo!", "La cuenta ha sido creada exitosamente");
                 main.inicializarLogin();
@@ -130,5 +135,6 @@ public class CrearCuentaController implements Alerta{
 
     public void setMain(MainSnowAlowe mainSnowAlowe) {
         this.main = mainSnowAlowe;
+        this.singleton =ModelFactoryController.getInstance();
     }
 }

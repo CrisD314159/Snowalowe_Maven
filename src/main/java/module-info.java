@@ -2,6 +2,8 @@ module co.edu.uniquindio.snowalowe {
 
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
+    requires java.logging;
 
 
     opens co.edu.uniquindio.snowalowe to javafx.fxml;

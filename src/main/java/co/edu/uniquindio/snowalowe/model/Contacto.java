@@ -1,7 +1,10 @@
 package co.edu.uniquindio.snowalowe.model;
 
-public class Contacto {
+import java.io.Serializable;
 
+public class Contacto implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String id;
     private String idVendedor;
     /*--------------CONSTRUCTOR-------------------------------------*/

@@ -1,8 +1,11 @@
 package co.edu.uniquindio.snowalowe.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Cuenta {
+public class Cuenta implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String usuario;
     private String contrasenia;
 

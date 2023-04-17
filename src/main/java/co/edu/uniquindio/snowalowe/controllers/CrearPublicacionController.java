@@ -17,6 +17,7 @@ import java.time.LocalDate;
 public class CrearPublicacionController {
 
     MainSnowAlowe main = new MainSnowAlowe();
+    ModelFactoryController singleton = ModelFactoryController.getInstance();
 
     private Image image;
 
@@ -84,7 +85,7 @@ public class CrearPublicacionController {
         categoria = categoriaProductoLabel.getText();
         date = this.date.toString();
         if(vericarCampos(nombre,codigo,precio,categoria)){
-            boolean publicacionCreada = main.crearPublicacion(nombre, codigo, precio, categoria, this.image, this.vendedorLogeado, date);
+            boolean publicacionCreada = singleton.crearPublicacion(nombre, codigo, precio, categoria, this.image, this.vendedorLogeado, date);
             if(publicacionCreada){
                 Alerta.saltarAlerta("Listo", "Publicacion Creada");
                 limpiarCampos();

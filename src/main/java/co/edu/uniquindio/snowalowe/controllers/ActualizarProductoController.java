@@ -21,6 +21,7 @@ public class ActualizarProductoController implements Initializable {
     private EstadoProducto[] listaEstados = {EstadoProducto.PUBLICADO, EstadoProducto.CANCELADO, EstadoProducto.VENDIDO};
 
 
+    ModelFactoryController singleton = ModelFactoryController.getInstance();
     Vendedor vendedor;
 
     Producto producto;
@@ -74,7 +75,7 @@ public class ActualizarProductoController implements Initializable {
         precio = Double.parseDouble(precioField.getText());
 
         if(verificarCampos(nombre, codigo, categoria, precio)){
-            boolean actualizarProducto = main.actualizarProducto(nombre, codigo, estado, categoria, precio, this.image, this.vendedor);
+            boolean actualizarProducto = singleton.actualizarProducto(nombre, codigo, estado, categoria, precio, this.image, this.vendedor);
             if(actualizarProducto){
                 Alerta.saltarAlerta("Listo", "Producto actualizado");
 

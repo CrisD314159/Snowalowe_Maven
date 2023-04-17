@@ -5,9 +5,12 @@ import co.edu.uniquindio.snowalowe.exceptions.ProductoException;
 import co.edu.uniquindio.snowalowe.exceptions.VendedorException;
 import javafx.scene.image.Image;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Red {
+public class Red implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String nombre;
     private ArrayList<Vendedor> listaUsuarios;
@@ -51,9 +54,6 @@ public class Red {
 
     /*----------------GETTERS & SETTERS-----------------------------------------------*/
 
-    public ArrayList<Vendedor> getUsuarios() {
-        return listaUsuarios;
-    }
 
     public void setUsuarios(ArrayList<Vendedor> usuarios) {
         this.listaUsuarios = usuarios;

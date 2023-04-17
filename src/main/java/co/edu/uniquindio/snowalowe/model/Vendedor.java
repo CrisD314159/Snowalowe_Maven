@@ -1,12 +1,13 @@
 package co.edu.uniquindio.snowalowe.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Vendedor {
+public class Vendedor implements Serializable {
 
 
-
+    private static final long serialVersionUID = 1L;
     private ArrayList<Mensaje> mensajes;
     private ArrayList<Vendedor> listaAmigos;
     private ArrayList<Producto> productos;
