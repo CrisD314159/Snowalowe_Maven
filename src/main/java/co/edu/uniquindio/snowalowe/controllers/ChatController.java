@@ -14,6 +14,8 @@ public class ChatController {
     private Vendedor vendedorAliado;
     MainSnowAlowe main;
 
+    ModelFactoryController singleton;
+
 
 
     @FXML
@@ -31,7 +33,7 @@ public class ChatController {
         String mensaje = "";
         mensaje = txtMensaje.getText();
         if(verificarCampos(mensaje)){
-            boolean enviarMensaje = main.enviarMensaje(mensaje, vendedorLogeado, vendedorAliado);
+            boolean enviarMensaje = singleton.enviarMensaje(mensaje, vendedorLogeado, vendedorAliado);
             if (enviarMensaje){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setHeaderText("Listo!!");
@@ -78,6 +80,7 @@ public class ChatController {
 
     public void setMain(MainSnowAlowe main) {
         this.main = main;
+        this.singleton= ModelFactoryController.getInstance();
     }
 
     public void obtenerVendedorLogeado(Vendedor vendedorLogeado) {

@@ -1,8 +1,10 @@
 package co.edu.uniquindio.snowalowe.model;
 
+import java.io.Serializable;
 import java.time.format.DateTimeFormatter;
 
-public class Solicitud {
+public class Solicitud implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private String id;
     private String idRemitente;

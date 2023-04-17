@@ -23,6 +23,8 @@ public class LoginController {
 
     MainSnowAlowe main;
 
+    ModelFactoryController singleton;
+
     @FXML
     private Label SesionLabel;
 
@@ -87,7 +89,7 @@ public class LoginController {
         usuario = userField.getText();
         contrasenia= passwordField.getText();
         if(verificarCampos(usuario, contrasenia)){
-            if(main.verificarUsuario(usuario, contrasenia)){
+            if(singleton.verificarUsuario(usuario, contrasenia)){
                 Vendedor vendedorLogeado = Objects.requireNonNull(main.buscarVendedor(usuario, contrasenia)) ;
                 main.abrirPanelVendedor(vendedorLogeado);
             }else {
@@ -111,6 +113,7 @@ public class LoginController {
 
     public void setMain(MainSnowAlowe mainSnowAlowe) {
         this.main = mainSnowAlowe;
+        this.singleton = ModelFactoryController.getInstance();
     }
 }
 

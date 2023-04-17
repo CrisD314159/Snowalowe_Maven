@@ -25,6 +25,8 @@ public class PanelUsuarioController {
 
     private MainSnowAlowe main;
 
+    ModelFactoryController singleton;
+
     private Vendedor vendedor;
     @FXML
     private Button actualizarProductoButton;
@@ -116,7 +118,7 @@ public class PanelUsuarioController {
     private void eliminarProductoAction()  {
         String codigo = "";
         codigo = productoSeleccionado.getCodigo();
-        if(main.eliminarProducto(codigo, vendedor)){
+        if(singleton.eliminarProducto(codigo, vendedor)){
            Alerta.saltarAlerta("Listo", "Producto eliminado");
             listaProductosData.remove(productoSeleccionado);
             limpiarCamposProducto();
@@ -180,6 +182,7 @@ public class PanelUsuarioController {
 
     public void setMain(MainSnowAlowe main){
         this.main = main;
+        this.singleton = ModelFactoryController.getInstance();
         tableProductos.getItems().clear();
         tableProductos.setItems(obtenerListaProductos());
         amigosTable.getItems().clear();

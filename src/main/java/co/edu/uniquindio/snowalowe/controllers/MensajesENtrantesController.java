@@ -23,6 +23,8 @@ public class MensajesENtrantesController {
     Vendedor vendedorLogeado;
 
     MainSnowAlowe main;
+
+    ModelFactoryController singleton;
     @FXML
     private TableColumn<Mensaje, String> autorColum;
 
@@ -65,7 +67,7 @@ public class MensajesENtrantesController {
         String mensaje = "";
         mensaje = mensajeField.getText();
         if(verificarCampos(mensaje)){
-            boolean enviarMensaje = main.respoderMensaje(mensaje, vendedorLogeado, autor);
+            boolean enviarMensaje = singleton.respoderMensaje(mensaje, vendedorLogeado, autor);
             if (enviarMensaje){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setHeaderText("Listo!!");
@@ -134,6 +136,7 @@ public class MensajesENtrantesController {
 
     public void setMain(MainSnowAlowe main) {
         this.main = main;
+        this.singleton = ModelFactoryController.getInstance();
         tableMensajes.getItems().clear();
         tableMensajes.setItems(obtenerListaMensajes());
 

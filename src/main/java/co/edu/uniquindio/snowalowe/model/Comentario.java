@@ -1,8 +1,11 @@
 package co.edu.uniquindio.snowalowe.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Comentario {
+public class Comentario implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     String contenido;
     Vendedor autor;
     Producto producto;

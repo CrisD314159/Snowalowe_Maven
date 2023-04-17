@@ -2,10 +2,11 @@ package co.edu.uniquindio.snowalowe.model;
 
 import javafx.scene.image.Image;
 
+import java.io.Serializable;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class Producto {
+public class Producto implements Serializable {
 
     private ArrayList<Comentario> comentarios;
     private ArrayList<Interaccion> interacciones;
