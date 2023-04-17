@@ -71,7 +71,7 @@ public  class ArchivoUtil {
 	{
 		String log = "";
 		Logger LOGGER = Logger.getLogger(accion);
-		FileHandler fileHandler =  null;
+		FileHandler fileHandler = null;
 		
 		cargarFechaSistema();
 

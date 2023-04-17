@@ -23,7 +23,7 @@ public class ModelFactoryController implements IModelFactoryService {
 	}
 
 	@Override
-	public Vendedor crearUsuario(String nombre, String apellido, String direccion, String cedula, Cuenta cuenta) throws VendedorException {
+	public Vendedor crearUsuario(String nombre, String apellido, String direccion, String cedula, Cuenta cuenta) throws VendedorException, IOException {
 		return red.nuevoVendedor(nombre,apellido, cedula, direccion, cuenta);
 	}
 	@Override
@@ -51,6 +51,11 @@ public class ModelFactoryController implements IModelFactoryService {
 	@Override
 	public boolean eliminarProducto(String codigo, Vendedor vendedor) {
 		return  red.eliminarProducto(codigo, vendedor);
+	}
+
+	@Override
+	public Vendedor buscarVendedor(String usuario, String contrasenia) {
+		return red.obtenerVendedor(usuario, contrasenia);
 	}
 
 
@@ -96,6 +101,8 @@ public class ModelFactoryController implements IModelFactoryService {
 		
 		//Registrar la accion de incio de sesi�n
 		Persistencia.guardaRegistroLog("Inicio de sesion del usuario:pedro", 1, "inicioSesion");
+		iniciarSalvarDatosPrueba();
+
 		
 		
 	}
@@ -203,7 +210,7 @@ public class ModelFactoryController implements IModelFactoryService {
 		vendedor1.setMensajes(listaMensajes1);
 
 
-		red.getListaUsuarios().add(vendedor1);
+		//red.getListaUsuarios().add(vendedor1);
 		
 
 		

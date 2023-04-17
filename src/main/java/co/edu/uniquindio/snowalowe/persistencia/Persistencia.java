@@ -14,13 +14,13 @@ import java.util.ArrayList;
 
 public class Persistencia {
 
-	public static final String RUTA_ARCHIVO_CLIENTES = "../resources/archivoClientes.txt";
-	public static final String RUTA_ARCHIVO_VENDEDORES = "../resources/archivoVendedores.txt";
-	public static final String RUTA_ARCHIVO_USUARIOS = "src/resources/archivoUsuarios.txt";
-	public static final String RUTA_ARCHIVO_LOG = "../resources/SnowaloweLog.txt";
-	public static final String RUTA_ARCHIVO_OBJETOS = "src/resources/archivoObjetos.txt";
-	public static final String RUTA_ARCHIVO_MODELO_RED_BINARIO = "../resources/model.dat";
-	public static final String RUTA_ARCHIVO_MODELO_RED_XML = "../resources/model.xml";
+	public static final String RUTA_ARCHIVO_CLIENTES = "../archivos/archivoClientes.txt";
+	public static final String RUTA_ARCHIVO_VENDEDORES = "src/main/java/co/edu/uniquindio/snowalowe/archivos/archivoVendedores.txt";
+	public static final String RUTA_ARCHIVO_USUARIOS = "src/archivos/archivoUsuarios.txt";
+	public static final String RUTA_ARCHIVO_LOG = "src/main/java/co/edu/uniquindio/snowalowe/archivos/SnowaloweLog.txt";
+	public static final String RUTA_ARCHIVO_OBJETOS = "src/archivos/archivoObjetos.txt";
+	public static final String RUTA_ARCHIVO_MODELO_RED_BINARIO = "src/main/java/co/edu/uniquindio/snowalowe/archivos/model.dat";
+	public static final String RUTA_ARCHIVO_MODELO_RED_XML = "src/main/java/co/edu/uniquindio/snowalowe/archivos/model.xml";
 
 
 	

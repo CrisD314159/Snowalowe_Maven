@@ -5,6 +5,7 @@ import co.edu.uniquindio.snowalowe.exceptions.CuentaException;
 import co.edu.uniquindio.snowalowe.exceptions.VendedorException;
 import co.edu.uniquindio.snowalowe.model.Cuenta;
 import co.edu.uniquindio.snowalowe.model.Vendedor;
+import co.edu.uniquindio.snowalowe.persistencia.Persistencia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -95,6 +96,7 @@ public class CrearCuentaController implements Alerta{
         if(verificarCampos(nombre, apellido, direccion, cedula, usuario, contrasenia)){
             Cuenta cuenta = singleton.crearCuenta(usuario, contrasenia);
             Vendedor crearUsuario = singleton.crearUsuario(nombre, apellido, direccion, cedula, cuenta);
+
             if(crearUsuario != null){
                 Alerta.saltarAlerta("Listo!", "La cuenta ha sido creada exitosamente");
                 main.inicializarLogin();

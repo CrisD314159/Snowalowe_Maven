@@ -3,8 +3,10 @@ package co.edu.uniquindio.snowalowe.model;
 import co.edu.uniquindio.snowalowe.exceptions.CuentaException;
 import co.edu.uniquindio.snowalowe.exceptions.ProductoException;
 import co.edu.uniquindio.snowalowe.exceptions.VendedorException;
+import co.edu.uniquindio.snowalowe.persistencia.Persistencia;
 import javafx.scene.image.Image;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -18,11 +20,13 @@ public class Red implements Serializable {
 
     /*----------------CONSTRUCTOR--------------------------------------------------*/
 
+
+
     public Red(String nombre) {
-        listaUsuarios = new ArrayList<Vendedor>();
-        listaCuentas = new ArrayList<Cuenta>();
+        this.listaUsuarios = new ArrayList<Vendedor>();
+        this.listaCuentas = new ArrayList<Cuenta>();
         this.nombre = nombre;
-        inicializarDatos();
+        //inicializarDatos();
     }
 
     private void inicializarDatos() {
@@ -38,6 +42,8 @@ public class Red implements Serializable {
     }
 
     public Red() {
+        this.listaUsuarios = new ArrayList<Vendedor>();
+        this.listaCuentas = new ArrayList<Cuenta>();
     }
 
     /*----------------METODOS-------------------------------------------------------*/
@@ -84,7 +90,7 @@ public class Red implements Serializable {
     }
 
     /*------------METODOS CREATE--------------*/
-    public Vendedor nuevoVendedor(String nombre, String apellido, String cedula, String direccion, Cuenta cuenta) throws VendedorException {
+    public Vendedor nuevoVendedor(String nombre, String apellido, String cedula, String direccion, Cuenta cuenta) throws VendedorException, IOException {
         Vendedor vendedor = new Vendedor();
         ArrayList<Producto> listaProductos = new ArrayList<Producto>();
         ArrayList<Vendedor> listaVendedoresAliados = new ArrayList<Vendedor>();
@@ -102,6 +108,7 @@ public class Red implements Serializable {
             throw new VendedorException("El vendedor ya existe");
         }
         listaUsuarios.add(vendedor);
+        Persistencia.guardarVendedores(listaUsuarios);
         return vendedor;
     }
 

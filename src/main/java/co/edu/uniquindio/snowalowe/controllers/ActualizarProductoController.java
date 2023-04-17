@@ -56,6 +56,10 @@ public class ActualizarProductoController implements Initializable {
     @FXML
     private Button seleccionarImagenButton;
 
+    public ActualizarProductoController(ModelFactoryController singleton) {
+        //this.singleton = singleton;
+    }
+
     @FXML
     void actualizarProducto(ActionEvent event) {
         actualizarButtonAction();

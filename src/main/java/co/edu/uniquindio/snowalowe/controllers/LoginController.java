@@ -23,7 +23,7 @@ public class LoginController {
 
     MainSnowAlowe main;
 
-    ModelFactoryController singleton;
+    ModelFactoryController singleton = ModelFactoryController.getInstance();
 
     @FXML
     private Label SesionLabel;
@@ -90,7 +90,7 @@ public class LoginController {
         contrasenia= passwordField.getText();
         if(verificarCampos(usuario, contrasenia)){
             if(singleton.verificarUsuario(usuario, contrasenia)){
-                Vendedor vendedorLogeado = Objects.requireNonNull(main.buscarVendedor(usuario, contrasenia)) ;
+                Vendedor vendedorLogeado = singleton.buscarVendedor(usuario, contrasenia) ;
                 main.abrirPanelVendedor(vendedorLogeado);
             }else {
                 Alerta.saltarAlerta("Error!", "Datos incorrectos, vuelvelo a intentar");
@@ -113,7 +113,15 @@ public class LoginController {
 
     public void setMain(MainSnowAlowe mainSnowAlowe) {
         this.main = mainSnowAlowe;
-        this.singleton = ModelFactoryController.getInstance();
     }
+
+    @FXML
+    void initialize() {
+
+
+
+
+    }
+
 }
 
