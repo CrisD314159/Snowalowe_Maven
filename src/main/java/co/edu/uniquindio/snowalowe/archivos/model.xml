@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="19.0.2" class="java.beans.XMLDecoder">
+ <object class="co.edu.uniquindio.snowalowe.model.Red" id="Red0">
+  <void property="listaUsuarios">
+   <void method="add">
+    <object class="co.edu.uniquindio.snowalowe.model.Vendedor">
+     <void property="apellido">
+      <string>arias</string>
+     </void>
+     <void property="cedula">
+      <string>125454</string>
+     </void>
+     <void property="cuenta">
+      <object class="co.edu.uniquindio.snowalowe.model.Cuenta">
+       <void property="contrasenia">
+        <string>123</string>
+       </void>
+       <void property="usuario">
+        <string>jj</string>
+       </void>
+      </object>
+     </void>
+     <void property="direccion">
+      <string>Armenia</string>
+     </void>
+     <void property="listaAmigos">
+      <object class="java.util.ArrayList"/>
+     </void>
+     <void property="mensajes">
+      <object class="java.util.ArrayList"/>
+     </void>
+     <void property="nombre">
+      <string>juan</string>
+     </void>
+     <void property="productos">
+      <object class="java.util.ArrayList"/>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
